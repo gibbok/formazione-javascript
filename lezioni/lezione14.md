@@ -109,6 +109,22 @@ let sayHi = function(name) {  // (*) non possiamo chiamare sayHi prima della sua
 };
 ```
 
+## Passare una callback correttamente
+
+Quando una callback viene passata, si passa il riferimento senza parentesi: `ask("...", yes, no)`. Scrivere `yes()` la eseguirebbe immediatamente e passerebbe il suo risultato.
+
+```javascript
+function applica(valore, trasformazione) {
+  return trasformazione(valore);
+}
+
+const risultato = applica(3, function (numero) {
+  return numero * 2;
+});
+```
+
+Una dichiarazione di funzione viene resa disponibile prima dell'esecuzione. Una function expression assegnata a `let` o `const` segue invece le regole della variabile e non va usata prima della dichiarazione.
+
 ### Conclusioni
 
 Le funzioni create con la function expression sono diverse dalle dichiarazioni di funzione. Non vengono sollevate e non possono essere chiamate prima della loro dichiarazione. Sono sempre funzioni anonime, anche se assegniamo loro un nome. Le funzioni expression sono utili per passare funzioni come argomenti ad altre funzioni, ad esempio per creare callback functions.

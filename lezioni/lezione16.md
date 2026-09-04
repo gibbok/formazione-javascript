@@ -1,4 +1,4 @@
-# Clousure e scope
+# Closure e scope
 
 In questo capitolo vedremo cosa sono le closure in Javascript e come funzionano.
 
@@ -110,6 +110,32 @@ visualizzaSaluto();
 ```
 
 In questo caso la funzione `saluta()` non visualizza direttamente la stringa ma restituisce una funzione che assolve questo compito. Pertanto, quando la funzione restituita viene invocata, la funzione `saluta()` (la sua funzione esterna) ha terminato la sua esecuzione e quindi il suo contesto di esecuzione non esiste più. Nonostante ciò è ancora possibile accedere alla variabile `nomeCognome` presente nel suo `scope locale`.
+
+## Closure e stato privato
+
+Una closure conserva l'accesso alle variabili del proprio ambiente lessicale anche dopo il ritorno della funzione esterna. La variabile resta nello stesso ambiente condiviso dalle funzioni che la catturano.
+
+```javascript
+function creaContatore(iniziale = 0) {
+  let valore = iniziale;
+
+  return {
+    incrementa() {
+      valore += 1;
+      return valore;
+    },
+    leggi() {
+      return valore;
+    }
+  };
+}
+
+const contatore = creaContatore(10);
+contatore.incrementa(); // 11
+// contatore.valore non è accessibile dall'esterno
+```
+
+Le closure sono utili per incapsulare stato, creare factory e configurare callback. Poiché l'ambiente resta raggiungibile, una closure può mantenere in memoria dati voluminosi: listener e risorse non più necessari vanno rimossi.
 
 ### Conclusioni
 

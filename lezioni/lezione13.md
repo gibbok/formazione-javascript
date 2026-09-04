@@ -148,6 +148,20 @@ Una funzione dovrebbe fare esattamente ciò che il suo nome descrive, niente di 
 
 Due azioni separate solitamente meritano due funzioni diverse, anche se molto spesso vengono chiamate insieme (in questo caso potrebbe essere utile creare una terza funzione che chiama entrambe).
 
+## Parametri variabili e responsabilità
+
+I parametri sono locali alla funzione. Se vengono passati meno argomenti, quelli mancanti valgono `undefined`; con il rest operator è possibile raccogliere un numero variabile di argomenti:
+
+```javascript
+function somma(...numeri) {
+  return numeri.reduce((totale, numero) => totale + numero, 0);
+}
+
+console.log(somma(2, 3, 4)); // 9
+```
+
+Una funzione senza `return` restituisce `undefined`. È utile decidere se una funzione produce un valore, un effetto collaterale o entrambi, e mantenere questa responsabilità esplicita. Con `let` e `const` anche i blocchi `if`, `for` e `while` creano scope: evitare di modificare variabili globali rende le funzioni più facili da testare.
+
 ### Conclusioni
 
 Le funzioni sono uno degli aspetti più importanti di Javascript. Consentono di organizzare il codice in blocchi riutilizzabili, evitando ripetizioni e semplificando la manutenzione del codice.

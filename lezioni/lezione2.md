@@ -44,6 +44,8 @@ Ecco un esempio di utilizzo dei punti e virgola in JavaScript:
 console.log("Ciao mondo!");
 ```
 
+JavaScript applica l'**inserimento automatico dei punti e virgola** (Automatic Semicolon Insertion), ma affidarsi sempre a questo comportamento può rendere ambigui alcuni casi, soprattutto quando una riga inizia con `(`, `[`, `` ` `` o un operatore. Scegli una convenzione coerente: usare i punti e virgola esplicitamente è una scelta chiara per chi sta imparando.
+
 ## Case sensitivity
 
 JavaScript è case-sensitive, il che significa che fa distinzione tra maiuscole e minuscole. Ad esempio, le variabili `nome`, `Nome` e `NOME` sono considerate variabili diverse in JavaScript.
@@ -94,6 +96,27 @@ if (eta >= 18) {
     console.log(saluta());
 }
 ```
+
+## Blocchi e indentazione
+
+Le parentesi graffe definiscono un blocco. Il blocco è importante perché determina dove valgono le istruzioni condizionali e, con `let` e `const`, anche la visibilità delle variabili.
+
+```javascript
+const eta = 20;
+
+if (eta >= 18) {
+  const messaggio = "Accesso consentito";
+  console.log(messaggio);
+}
+
+// console.log(messaggio); // ReferenceError: fuori dal blocco
+```
+
+L'indentazione non cambia il significato del programma, ma rende visibile la struttura. Un nome descrittivo e un blocco breve sono generalmente più utili di un commento che ripete la stessa istruzione.
+
+## Espressioni e istruzioni
+
+Un'espressione produce un valore, per esempio `2 + 2` o `nome.toUpperCase()`. Un'istruzione esegue un'azione, come una dichiarazione `const`, un `if` o un `return`. Riconoscere questa differenza aiuta a capire perché alcune funzioni restituiscono un valore e altre producono soltanto un effetto.
 
 ### Conclusioni
 

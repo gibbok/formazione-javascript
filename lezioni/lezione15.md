@@ -67,6 +67,20 @@ alert( sorted ); // 3, 5, 8
 
 In questo esempio, `arr.sort` prende una funzione di confronto come argomento. Questa funzione di confronto è una arrow function che confronta due numeri e restituisce `a - b`.
 
+## Valore restituito e `this`
+
+Una arrow function con corpo espressione restituisce implicitamente il risultato; con un corpo a blocchi è necessario scrivere `return`:
+
+```javascript
+const doppio = numero => numero * 2;
+const doppioEsplicito = numero => {
+  return numero * 2;
+};
+const creaUtente = nome => ({ nome });
+```
+
+Le arrow function non hanno un proprio `this`, `arguments` o `prototype`: catturano `this` dallo scope esterno. Sono quindi ottime callback e funzioni brevi, ma un metodo che deve avere un `this` dinamico va spesso definito con la sintassi dei metodi o con `function`.
+
 ### Conclusioni
 
 Le arrow functions sono una forma più breve e concisa di definire le funzioni in JavaScript. Sono particolarmente utili quando si passano funzioni come callback o quando si desidera scrivere codice più leggibile e conciso.

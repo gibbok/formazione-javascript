@@ -50,6 +50,17 @@ x++; // x = 11
 y--; // y = 4
 ```
 
+L'operatore `%` restituisce il resto della divisione, non una percentuale. Per sapere se un intero è pari si può usare `numero % 2 === 0`. Sono disponibili anche `**` per l'elevamento a potenza e gli operatori di assegnazione composta:
+
+```javascript
+let totale = 10;
+totale += 5; // totale = totale + 5
+totale *= 2; // totale = totale * 2
+const area = 3 ** 2; // 9
+```
+
+Gli operatori `++` e `--` possono essere prefissi o postfissi. In espressioni complesse è più leggibile incrementare una variabile con un'istruzione separata.
+
 ## Precedenza degli operatori
 
 Gli operatori aritmetici seguono una precedenza specifica, che determina l'ordine in cui vengono eseguite le operazioni. Ad esempio, la moltiplicazione ha una precedenza maggiore rispetto all'addizione, quindi le operazioni di moltiplicazione vengono eseguite prima delle operazioni di addizione.
@@ -63,6 +74,8 @@ var risultato = 2 * (3 + x); // 26
 ```
 
 In questo esempio, l'operazione di addizione `3 + x` viene eseguita prima, quindi il risultato viene moltiplicato per `2`.
+
+Le parentesi rendono esplicito l'intento e riducono gli errori. Se il calcolo diventa lungo, è preferibile dividerlo in variabili con nomi significativi invece di affidarsi alla sola precedenza.
 
 ### Conclusione
 

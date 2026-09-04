@@ -44,6 +44,17 @@ for (var i = 0; i < 5; i++) {
 
 In questo esempio, il ciclo `for` esegue il blocco di codice finché la variabile `i` è minore di 5. Ad ogni iterazione, la variabile `i` viene incrementata di 1.
 
+La forma `for` è adatta quando esiste un contatore o una sequenza da percorrere. Con `let`, la variabile del ciclo resta confinata al ciclo:
+
+```javascript
+for (let indice = 0; indice < 3; indice++) {
+  console.log(indice);
+}
+// indice non è disponibile qui
+```
+
+Usare `while` quando il numero di iterazioni dipende da una condizione che cambia durante l'esecuzione. In ogni ciclo è essenziale assicurarsi che la condizione possa diventare falsa, altrimenti si crea un ciclo infinito.
+
 ### Il ciclo for in
 
 Il ciclo `for...in` è utilizzato per iterare su tutte le proprietà di un oggetto. Ecco un esempio di utilizzo del ciclo `for...in` in JavaScript:
@@ -69,6 +80,8 @@ for (var color of colors) {
   console.log(color);
 }
 ```
+
+`for...in` restituisce i nomi delle proprietà enumerabili, mentre `for...of` restituisce i valori di un iterabile. Per gli array è quasi sempre preferibile `for...of`, perché `for...in` può includere proprietà aggiunte all'oggetto e restituisce indici come stringhe.
 
 In questo esempio, il ciclo `for...of` itera su tutti gli elementi dell'array `colors` e stampa ciascun elemento.
 
@@ -101,6 +114,8 @@ for (var i = 0; i < 5; i++) {
 ```
 
 In questo esempio, l'iterazione corrente viene saltata quando la variabile `i` è uguale a 3.
+
+`break` interrompe il ciclo più vicino, mentre `continue` salta alla successiva iterazione. Sono utili per casi di uscita o filtro, ma troppe diramazioni possono rendere più chiaro estrarre il corpo in una funzione.
 
 ### Etichette di ciclo
 
