@@ -75,6 +75,10 @@ switch (a) {
 
 In questo esempio, se `a` è 3 o 5, verrà visualizzato un messaggio "Wrong!" e "Why don't you take a math class?". Se `a` è 4, verrà visualizzato un messaggio "Right!". In tutti gli altri casi, verrà visualizzato un messaggio "The result is strange. Really.".
 
+Il confronto di `switch` è stretto: `switch ("1")` non entra in `case 1`. Il `break` impedisce il fall-through, cioè l'esecuzione dei casi successivi. Il fall-through intenzionale è leggibile quando i casi sono raggruppati, ma va terminato con un `break` o con un `return`.
+
+Quando i casi dipendono da intervalli, più condizioni o condizioni composte, `if...else` può comunicare meglio l'intento. `switch` è particolarmente adatto a un insieme finito di valori, come stati o comandi.
+
 ## Valori con espressioni
 
 Gli `case` possono contenere espressioni arbitrarie di JavaScript. Ad esempio:

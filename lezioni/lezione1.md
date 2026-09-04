@@ -6,6 +6,16 @@ JavaScript è un linguaggio di programmazione ad alto livello, orientato agli og
 
 JavaScript è un linguaggio di scripting, il che significa che è stato progettato per essere eseguito all'interno di un altro programma. In questo caso, il programma è il browser web. JavaScript è stato progettato per aggiungere interattività ai siti web. Ad esempio, JavaScript può essere utilizzato per aggiungere effetti di scorrimento, aggiornare parti di una pagina, visualizzare messaggi di avviso o eseguire calcoli.
 
+È utile distinguere tre elementi che spesso vengono confusi:
+
+- **ECMAScript** è la specifica che descrive sintassi e comportamento del linguaggio.
+- **JavaScript** è un'implementazione di quella specifica, arricchita dalle API dell'ambiente in cui viene eseguita.
+- **Il browser** mette a disposizione API come `document`, `fetch`, `localStorage` e `setTimeout`, che non fanno parte del nucleo ECMAScript.
+
+Per esempio, `Array`, `Promise` e `Map` appartengono al linguaggio, mentre `document.querySelector()` appartiene alle API del browser. Questa distinzione spiega perché lo stesso JavaScript può essere eseguito anche in Node.js, dove `document` non esiste ma sono disponibili API diverse.
+
+Il codice viene eseguito da un **motore JavaScript**. Il motore analizza il testo, lo compila in una forma efficiente e lo esegue. Nei browser moderni questo processo è dinamico: il motore può ottimizzare le parti del programma più utilizzate mentre l'applicazione è in esecuzione.
+
 ## Storia di JavaScript
 
 JavaScript è stato creato da Brendan Eich nel 1995. Inizialmente, JavaScript era chiamato Mocha. Successivamente, il nome è stato cambiato in LiveScript e infine in JavaScript. JavaScript è stato progettato per essere un linguaggio di scripting per il web. JavaScript è stato progettato per essere simile a Java, ma con una sintassi più semplice e meno funzionalità.
@@ -27,6 +37,17 @@ JavaScript ha molte caratteristiche che lo rendono un linguaggio di programmazio
 - **Interoperabilità**: JavaScript è un linguaggio di programmazione che può essere utilizzato insieme ad altri linguaggi di programmazione. Ad esempio, è possibile utilizzare JavaScript insieme a HTML e CSS per creare siti web interattivi.
 
 - **Portabilità**: JavaScript è un linguaggio di programmazione che può essere eseguito su qualsiasi piattaforma. JavaScript è supportato da tutti i principali browser web, tra cui Chrome, Firefox, Safari e Edge.
+
+### Un primo programma
+
+```javascript
+const nome = "Ada";
+const messaggio = `Ciao, ${nome}!`;
+
+console.log(messaggio);
+```
+
+`const` dichiara un riferimento che non verrà riassegnato, mentre il template literal racchiuso dai backtick permette di inserire espressioni con `${...}`. `console.log()` scrive nella console degli strumenti per sviluppatori e non modifica direttamente la pagina.
 
 ### Esempio di codice JavaScript
 
@@ -106,6 +127,10 @@ Esempi di alcuni linguaggi:
 - `Dart` è un linguaggio autonomo che possiede il suo motore, che esegue in ambienti esterni al browser (come mobile apps). E’ stato introdotto da Google come alternativa a JavaScript, ma attualmente i browser richiedono la conversione in JavaScript, proprio come i precedenti.
 - `Brython` è un transpiler, scritto in Python, che consente di scrivere applicazioni in quest’ultimo senza utilizzare JavaScript.
 - `Kotlin` è un moderno, conciso e sicuro linguaggio di programmazione mirato ai browsers o a Node.
+
+### Come studiare JavaScript
+
+Un programma JavaScript può essere osservato su tre livelli: i dati che riceve, le trasformazioni che applica e gli effetti che produce. Separare questi livelli rende più semplice individuare gli errori. Conviene inoltre provare gli esempi nella console del browser, modificare un valore alla volta e leggere il risultato con `console.log()`.
 
 ### Conclusione
 

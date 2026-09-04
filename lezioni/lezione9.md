@@ -102,6 +102,20 @@ console.log(x < 5 || y > 10); // false
 
 In generale, gli operatori di confronto sono utilizzati per eseguire confronti tra valori e variabili e per prendere decisioni in base ai risultati dei confronti.
 
+## Quale uguaglianza scegliere?
+
+Nel codice applicativo è normalmente preferibile `===` e `!==`, perché non introducono conversioni nascoste. Il confronto `valore == null` è un idioma specifico per accettare sia `null` sia `undefined`, ma va usato consapevolmente.
+
+I confronti tra oggetti verificano il riferimento, non il contenuto:
+
+```javascript
+const primo = { id: 1 };
+const secondo = { id: 1 };
+
+console.log(primo === secondo); // false
+console.log(primo === primo);   // true
+```
+
 ## Operatori di confronto con null e undefined
 
 In JavaScript, ci sono due tipi di operatori di confronto specifici per i valori `null` e `undefined`:
@@ -124,6 +138,8 @@ console.log(x !== null); // false
 console.log(y != null); // true
 console.log(y !== null); // true
 ```
+
+Se entrambi gli operandi sono stringhe, `>` e `<` confrontano la sequenza dei caratteri; in altri casi JavaScript prova una conversione numerica. Per evitare sorprese, normalizzare prima i dati e poi confrontarli.
 
 In generale, gli operatori di confronto con `null` e `undefined` sono utilizzati per verificare se una variabile è stata assegnata a un valore o meno.
 

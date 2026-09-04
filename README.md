@@ -49,11 +49,8 @@ Questo repository contiene materiale didattico per l'apprendimento del linguaggi
 - [Lezione 15](/lezioni/lezione15.md): Arrow function
 - [Lezione 16](/lezioni/lezione16.md): Closure
 - [Lezione 17](/lezioni/lezione17.md): Oggetti
-
-work in progress...
-
-- [Lezione 19](/lezioni/lezione19.md): Prototypes e inheritance
 - [Lezione 18](/lezioni/lezione18.md): Destructuring
+- [Lezione 19](/lezioni/lezione19.md): Prototypes e inheritance
 - [Lezione 20](/lezioni/lezione20.md): Classi
 - [Lezione 21](/lezioni/lezione21.md): Gestione degli errori
 - [Lezione 22](/lezioni/lezione22.md): Promise e async/await
@@ -61,8 +58,6 @@ work in progress...
 - [Lezione 24](/lezioni/lezione24.md): Moduli
 
 ## Parte 2: Browser: Document, Events, Interfaces
-
-work in progress...
 
 - [Lezione 25](/lezioni/lezione25.md): Il Browser
 - [Lezione 26](/lezioni/lezione26.md): Il DOM
@@ -83,8 +78,6 @@ work in progress...
 
 ## Parte 3: JavaScript avanzato
 
-work in progress...
-
 - [Lezione 41](/lezioni/lezione41.md): Metodi di popups e window
 - [Lezione 42](/lezioni/lezione42.md): JSON
 - [Lezione 43](/lezioni/lezione43.md): Network requests
@@ -96,8 +89,6 @@ work in progress...
 - [Lezione 49](/lezioni/lezione49.md): Regular expressions
 
 ## Parte 4: Node.js
-
-work in progress...
 
 - [Lezione 50](/lezioni/lezione50.md): Introduzione a Node.js
 - [Lezione 51](/lezioni/lezione51.md): Modules
@@ -111,8 +102,6 @@ work in progress...
 - [Lezione 59](/lezioni/lezione59.md): Il modulo MySQL
 
 ## Parte 5: La tipizzazione di TypeScript
-
-work in progress...
 
 - [Lezione 60](/lezioni/lezione60.md): Introduzione a TypeScript
 - [Lezione 61](/lezioni/lezione61.md): Tipi di base
@@ -128,8 +117,6 @@ work in progress...
 
 ## Parte 6: La libreria jQuery
 
-work in progress...
-
 - [Lezione 71](/lezioni/lezione71.md): Introduzione a jQuery
 - [Lezione 72](/lezioni/lezione72.md): Selezione degli element
 - [Lezione 73](/lezioni/lezione73.md): Manipolazione degli elementi
@@ -139,17 +126,15 @@ work in progress...
 
 ## Parte 7: React
 
-work in progress...
-
 - [Lezione 77](/lezioni/lezione77.md): Introduzione a React
 - [Lezione 78](/lezioni/lezione78.md): JSX e TSX
 - [Lezione 79](/lezioni/lezione79.md): Componenti
 - [Lezione 80](/lezioni/lezione80.md): Props
 - [Lezione 81](/lezioni/lezione81.md): Stato e ciclo di vita
 - [Lezione 82](/lezioni/lezione82.md): Hooks
-- [Lezione 82](/lezioni/lezione82.md): Eventi
-- [Lezione 83](/lezioni/lezione83.md): Form
-- [Lezione 84](/lezioni/lezione84.md): React avanzato
+- [Lezione 83](/lezioni/lezione83.md): Eventi
+- [Lezione 84](/lezioni/lezione84.md): Form
+- [Lezione 85](/lezioni/lezione85.md): React avanzato
 
 ## Tools da installare
 

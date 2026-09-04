@@ -1,6 +1,6 @@
 # Oggetti
 
-Gli oggetti in Javascript sono strutture dati che consentono di raggruppare dati e funzionalità in un'unica entità. Gli oggetti sono costituiti da coppie chiave-valore, dove la chiave è una stringa e il valore può essere di qualsiasi tipo di dato.
+Gli oggetti in Javascript sono strutture dati che consentono di raggruppare dati e funzionalità in un'unica entità. Gli oggetti sono costituiti da coppie chiave-valore, dove una chiave può essere una stringa o un `Symbol` e il valore può essere di qualsiasi tipo di dato. Le chiavi numeriche vengono convertite in stringhe.
 
 ## Creazione di un oggetto
 
@@ -311,7 +311,7 @@ person3.age = 25;
 console.log(person3.age); // Output: 25
 ```
 
-In questo esempio, stiamo clonando l'oggetto `person1` in `person2` utilizzando l'operatore di assegnazione `=` e in `person3` utilizzando il metodo `Object.assign()`.
+L'assegnazione `person2 = person1` non clona l'oggetto: copia il riferimento, quindi modificare `person2` modifica anche `person1`. `Object.assign()` e lo spread `{ ...person1 }` creano una copia superficiale; gli oggetti annidati restano condivisi. Per dati compatibili si può usare `structuredClone(person1)`.
 
 ## Oggetti JSON
 
@@ -415,6 +415,8 @@ person.greet(); // Output: Hello, my name is John
 
 In questo esempio, stiamo definendo un metodo `greet` sull'oggetto `person` che utilizza il riferimento `this` per accedere alla proprietà `name` dell'oggetto stesso.
 
+Il valore di `this` dipende da come una funzione viene chiamata, non solo da dove è scritta. `person.greet()` usa `person`, mentre se il metodo viene estratto (`const saluta = person.greet`) il riferimento all'oggetto si perde. Le arrow function catturano invece il `this` esterno.
+
 ## Concatenamento opzionale '?.'
 
 In Javascript, l'operatore di concatenamento opzionale `?.` può essere utilizzato per accedere alle proprietà di un oggetto in modo sicuro, evitando errori se l'oggetto o la proprietà non esistono.
@@ -501,6 +503,18 @@ Possiamo anche utilizzare `?.` con delete:
 ```javascript
 delete user?.name; // cancella user.name se l'utente esiste
 ```
+
+## Destructuring e sintassi abbreviata
+
+Il destructuring permette di estrarre proprietà e di assegnare valori predefiniti:
+
+```javascript
+const persona = { name: "Ada", age: 36 };
+const { name, age } = persona;
+const copia = { ...persona, active: true };
+```
+
+La sintassi abbreviata dei metodi (`greet() {}`), le proprietà calcolate (`{ [chiave]: valore }`) e lo spread rendono gli oggetti più espressivi, ma non cambiano il fatto che siano mutabili e passati per riferimento.
 
 ### Conclusioni
 

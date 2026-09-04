@@ -57,6 +57,22 @@ Ecco un esempio di utilizzo degli attributi del tag `<script>`:
 
 In questo esempio, il tag `<script>` è utilizzato per includere codice JavaScript da un file esterno utilizzando l'attributo `src`. Gli attributi `type`, `defer` e `async` sono utilizzati per specificare il tipo di contenuto del codice JavaScript e il comportamento di esecuzione.
 
+### `defer` e `async` a confronto
+
+La posizione dello script e i suoi attributi determinano quando il codice può essere eseguito:
+
+- uno script normale nel `<head>` blocca il parsing dell'HTML mentre viene scaricato ed eseguito;
+- `defer` scarica lo script in parallelo, lo esegue dopo il parsing e mantiene l'ordine tra più script differiti;
+- `async` scarica in parallelo ed esegue appena il download termina, quindi l'ordine tra più script non è garantito;
+- gli script `type="module"` sono differiti automaticamente e supportano `import` ed `export`.
+
+```html
+<script src="config.js" defer></script>
+<script src="app.js" defer></script>
+```
+
+In questo esempio `app.js` può usare ciò che `config.js` ha inizializzato, perché gli script `defer` vengono eseguiti nell'ordine in cui compaiono.
+
 ## Supporto del tag “script” nei browser
 
 Il tag `<script>` è supportato da tutti i principali browser web, tra cui Chrome, Firefox, Safari e Edge. Il tag `<script>` è utilizzato per includere codice JavaScript in un documento HTML e può essere utilizzato per creare siti web interattivi e dinamici.
@@ -102,6 +118,12 @@ Esempio:
 ```
 
 In questo esempio, il codice all'interno del tag `<script>` viene ignorato perché l'attributo `src` è impostato su "script.js".
+
+## Percorsi e sicurezza
+
+Il valore di `src` è un URL relativo o assoluto e viene risolto rispetto all'URL del documento HTML. Un file `js/app.js` non è lo stesso file di `./app.js` se la struttura delle cartelle è diversa. In produzione è inoltre buona pratica servire gli script tramite HTTPS e usare una Content Security Policy adeguata.
+
+Quando il codice deve accedere al DOM, `defer` o `type="module"` evitano di dover aspettare manualmente l'evento `DOMContentLoaded` nella maggior parte dei casi. Se invece lo script viene inserito alla fine del `<body>`, gli elementi precedenti sono già stati analizzati, ma le dipendenze tra script vanno comunque gestite esplicitamente.
 
 ### Conclusione
 

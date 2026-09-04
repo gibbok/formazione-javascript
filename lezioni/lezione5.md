@@ -42,6 +42,16 @@ const PI = 3.14;
 let x = 10;
 ```
 
+`const` impedisce la riassegnazione del riferimento, ma non rende immutabile un oggetto o un array:
+
+```javascript
+const utente = { nome: "Ada" };
+utente.nome = "Grace"; // consentito: cambia una proprietà
+// utente = {};         // TypeError: il riferimento non può cambiare
+```
+
+`let` e `const` hanno scope di blocco e non possono essere usati prima della dichiarazione. `var` ha invece scope di funzione e un comportamento di hoisting più difficile da prevedere; nel codice moderno è generalmente preferibile usare `let` o `const`.
+
 In questo esempio, la variabile `PI` viene dichiarata con la parola chiave `const` e la variabile `x` viene dichiarata con la parola chiave `let`.
 
 ### Le costanti maiuscole
@@ -137,6 +147,15 @@ alert( Infinity ); // Infinity
 
 alert( "non un numero" / 2 ); // NaN, such division is erroneous
 ```
+
+I numeri JavaScript sono normalmente rappresentati in virgola mobile. Per questo alcuni decimali non sono rappresentabili esattamente:
+
+```javascript
+console.log(0.1 + 0.2); // 0.30000000000000004
+console.log((0.1 + 0.2).toFixed(2)); // "0.30"
+```
+
+`toFixed()` restituisce una stringa. Per confrontare risultati calcolati è spesso meglio usare una tolleranza, mentre `Number.isNaN(valore)` verifica in modo esplicito la presenza di `NaN`.
 
 ### Tipo BigInt
 
@@ -268,6 +287,8 @@ frutta[2] = "Pera"; // sostituire un elemento
 alert( frutta ); // Mela, Banana, Pera
 ```
 
+Gli array sono oggetti indicizzati a partire da zero e possiedono la proprietà `length`. Per verificare che un valore sia un array usare `Array.isArray(valore)`, perché `typeof []` restituisce `"object"`.
+
 ### L'operatore typeof
 
 L'operatore `typeof` può essere utilizzato per determinare il tipo di dati di una variabile o di un'espressione. Ad esempio:
@@ -290,6 +311,8 @@ console.log(typeof nullo); // object
 console.log(typeof nonDefinito); // undefined
 console.log(typeof Math); // "object"
 ```
+
+`typeof` è utile per controlli semplici, ma non distingue array, date e `null` dagli altri oggetti. Per i valori mancanti, `valore === undefined` è esplicito; per accettare sia `null` sia `undefined` si può usare intenzionalmente `valore == null`.
 
 In questo esempio, l'operatore `typeof` viene utilizzato per determinare il tipo di dati di diverse variabili.
 

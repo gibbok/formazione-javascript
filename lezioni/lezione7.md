@@ -36,6 +36,18 @@ var stringa = String(numero); // Conversione esplicita in una stringa
 
 In generale, è importante essere consapevoli della conversione di tipi in JavaScript e di come può influenzare il comportamento del codice. La conversione di tipi può portare a comportamenti imprevisti e errori, quindi è importante prestare attenzione quando si lavora con valori di tipi diversi.
 
+## Conversione implicita e input esterni
+
+L'operatore `+` concatena se almeno un operando è una stringa:
+
+```javascript
+console.log(2 + 3);       // 5
+console.log("2" + 3);     // "23"
+console.log(2 + 3 + "4"); // "54"
+```
+
+Per dati provenienti da form o URL è meglio convertire esplicitamente vicino all'ingresso. `parseInt("42px", 10)` restituisce `42`, mentre `Number("42px")` restituisce `NaN`: il primo legge una parte iniziale, il secondo richiede che tutta la stringa sia numerica. `Number.isFinite()` permette di rifiutare anche gli infiniti.
+
 ## Conversione Number(), String() e Boolean()
 
 In JavaScript, è possibile eseguire la conversione esplicita di valori in numeri, stringhe e booleani utilizzando le funzioni `Number()`, `String()` e `Boolean()`.
@@ -138,6 +150,8 @@ var booleano3 = Boolean(numero2); // Conversione in false
 var stringa2 = "";
 var booleano4 = Boolean(stringa2); // Conversione in false
 ```
+
+Sono falsy anche `-0` e `0n`. Invece stringhe come `"false"`, `"0"` e `"null"` non sono vuote e diventano `true`, un dettaglio importante quando si validano input testuali.
 
 È importante essere consapevoli di queste regole di conversione booleana quando si lavora con valori in JavaScript.
 
