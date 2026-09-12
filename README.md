@@ -153,6 +153,7 @@ Questo repository contiene materiale didattico per l'apprendimento del linguaggi
 - [Eloquent JavaScript](https://eloquentjavascript.net/)
 - [Node JS](https://nodejs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
+- [The Concise TypeScript Book (edizione italiana)](https://gibbok.github.io/typescript-book/it-it/) - Guida gratuita e open source in italiano
 - [jQuery](https://jquery.com/)
 - [React](https://react.dev/)
 
